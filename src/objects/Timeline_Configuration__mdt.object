@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Configures the related records to plot on the timeline lwc.</description>
+    <label>Timeline Configuration</label>
+    <pluralLabel>Timeline Configurations</pluralLabel>
+    <visibility>Protected</visibility>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Inactivate records to ignore them from the timeline lwc</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Drilldown__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Does this record support drilling into the detail</inlineHelpText>
+        <label>Allow Drilldown</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Field__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The field to use to show against each record on the timeline lwc as a short description (30 chars shown)</inlineHelpText>
+        <label>Detail Field</label>
+        <length>75</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fallback_Tooltip_Field__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The API Name of the field to use in tooltips when the object is not supported by the UI API</inlineHelpText>
+        <label>Fallback Tooltip Field</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Icon_Background_Colour__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The background colour to use for the icon</inlineHelpText>
+        <label>Icon Background Colour</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Icon__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The icon to use for this object type</inlineHelpText>
+        <label>Icon</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The sObject API Name that defines the child record</inlineHelpText>
+        <label>Object Name</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Object__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Parent Objects API Name that the child record applies to</inlineHelpText>
+        <label>Parent Object</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Position_Date_Field__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The date fields API name used to determine where on the timeline to plot the record</inlineHelpText>
+        <label>Position Date Field</label>
+        <length>150</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>50</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The order the object appears in the filter</inlineHelpText>
+        <label>Sequence</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_Field__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The field used for Task sObject type only</inlineHelpText>
+        <label>Type Field</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>No_Big_Objects_Allowed</fullName>
+        <active>true</active>
+        <description>Timeline is not a good option for BigObjects</description>
+        <errorConditionFormula>IF (  CONTAINS( Object_Name__c, &#39;__b&#39;), true, false)</errorConditionFormula>
+        <errorDisplayField>Object_Name__c</errorDisplayField>
+        <errorMessage>Big Objects cannot be used in the timeline. Timeline supports standard and custom objects only.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_External_Objects_Allowed</fullName>
+        <active>true</active>
+        <description>Timeline is not a good option for External Objects</description>
+        <errorConditionFormula>IF ( CONTAINS( Object_Name__c, &#39;__x&#39;), true, false)</errorConditionFormula>
+        <errorDisplayField>Object_Name__c</errorDisplayField>
+        <errorMessage>External Objects cannot be used in the timeline. Timeline supports standard and custom objects only.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Timeline Configuration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Timeline Configurations</value>
+    </caseValues>
+    <layouts>
+        <layout>Timeline Configuration Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <fields>
+        <help><!-- Inactivate records to ignore them from the timeline lwc --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field to use to show against each record on the timeline lwc as a short description (30 chars shown) --></help>
+        <label><!-- Detail Field --></label>
+        <name>Detail_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- The background colour to use for the icon --></help>
+        <label><!-- Icon Background Colour --></label>
+        <name>Icon_Background_Colour__c</name>
+    </fields>
+    <fields>
+        <help><!-- The icon to use for this object type --></help>
+        <label><!-- Icon --></label>
+        <name>Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- The sObject API Name that defines the child record --></help>
+        <label><!-- Object Name --></label>
+        <name>Object_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Parent Objects API Name that the child record applies to --></help>
+        <label><!-- Parent Object --></label>
+        <name>Parent_Object__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date fields API name used to determine where on the timeline to plot the record --></help>
+        <label><!-- Position Date Field --></label>
+        <name>Position_Date_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field used for Task sObject type only --></help>
+        <label><!-- Type Field --></label>
+        <name>Type_Field__c</name>
+    </fields>
+</CustomObjectTranslation>
