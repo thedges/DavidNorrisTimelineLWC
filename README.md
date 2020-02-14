@@ -1,2 +1,2 @@
 # DavidNorrisTimeliine
-Re-host of David's great timeline component for easy installation
+Re-host of (David Norris' great timeline component)[https://github.com/deejay-hub/timeline-lwc] for easy installation using 'Deploy to Salesforce' button. 
